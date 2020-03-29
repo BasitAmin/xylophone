@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:audioplayers/audio_cache.dart';
 void main() {
   runApp(MyApp());
 }
@@ -16,7 +16,17 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: SafeArea(
-          child: Container(),
+          child: Center(
+            child: Container(
+              child: FlatButton(
+                onPressed: (){
+                  final player=AudioCache();
+                  player.play('note1.wav');
+                },
+                child: Text('click me'),
+              ),
+            ),
+          ),
         ),
       ),
     );
